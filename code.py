@@ -1,6 +1,6 @@
-import yaml
-import subprocess
 import hashlib
+import subprocess
+import yaml
 import subprocess
 import flask
 
@@ -27,8 +27,8 @@ def fetch_website(urllib_version, url):
     exec(f"import urllib{urllib_version} as urllib", globals())
     # Fetch and print the requested URL
     http = urllib.PoolManager()
-    r = http.request('GET', url)
-    return r.data
+    request = http.request('GET', url)
+    return request.data
 
 
 
